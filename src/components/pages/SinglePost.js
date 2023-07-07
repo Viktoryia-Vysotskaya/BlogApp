@@ -21,37 +21,46 @@ const SinglePost = () => {
     if (!postData) return <Navigate to="/" />
     return (
         <>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center" style={{ marginTop: '80px' }}>
                 <Col xs="12" md="10" lg="8">
                     <header className="d-flex justify-content-between align-items-center">
-                        <h2>
+                        <h2 style={{ color: '#444' }}>
                             {postData.title}
                         </h2>
                         <div>
-                            <Button id="edit-button" variant="outline-info" as={NavLink} to={`/post/edit/${postData.id}`} style={{ marginRight: '5px' }}> Edit </Button>
-                            <Button id="delete-button" variant="outline-danger" onClick={handleShow} style={{ marginLeft: '5px' }}> Delete </Button>
+                            <style>
+                                {`
+                                    #edit-button:hover {
+                                    color: red;
+                                    border-color: blue;
+                                    background-color: #CCC;
+                                    }
+                                `}
+                            </style>
+                            <Button id="edit-button" variant="outline-info" as={NavLink} to={`/post/edit/${postData.id}`} style={{ marginRight: '20px', color: 'blue', borderColor: 'black', boxShadow: '0 0 5px blue, 0 0 10px gray, 0 0 15px blue' }}> Edit </Button>
+                            <Button id="delete-button" variant="outline-danger" onClick={handleShow} style={{ boxShadow: '0 0 5px red, 0 0 10px gray, 0 0 15px red' }}> Delete </Button>
                         </div>
                     </header>
                     <div className="py-4">
                         <div>
-                            <span className="fw-bold"> Author: </span>
+                            <span className="fw-bold" style={{ color: 'blue' }}> Author: </span>
                             <span>{postData.author}</span>
                         </div>
                         <div>
-                            <span className="fw-bold"> Published: </span>
+                            <span className="fw-bold" style={{ color: 'blue' }}> Published: </span>
                             <span>{postData.publishedDate}</span>
                         </div>
                     </div>
-                    <article>
+                    <article style={{ color: 'red', fontStyle: 'italic' }}>
                         {postData.content}
                     </article>
                 </Col>
             </Row>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} style={{ textAlign: 'center', marginTop: '250px' }}>
                 <Modal.Header closeButton>
-                    <Modal.Title> Are you sure you want to do that? </Modal.Title>
+                    <Modal.Title style={{ color: 'red', paddingLeft: '40px' }}> Are you sure you want to do that? </Modal.Title>
                 </Modal.Header>
-                <Modal.Body> Are you absolutely certain you want to proceed with this action? <br /> Once completed, this post will be permanently erased from the app! </Modal.Body>
+                <Modal.Body style={{ color: 'blue', fontSize: '14px' }}> Are you absolutely certain you want to proceed with this action? <br /> Once completed, this post will be permanently erased from the app! </Modal.Body>
                 <Modal.Footer>
                     <Button id="cancel-button" variant="secondary" onClick={handleClose}> Cancel </Button>
                     <Button id="remove-button" variant="danger" onClick={handleRemove}> Remove </Button>

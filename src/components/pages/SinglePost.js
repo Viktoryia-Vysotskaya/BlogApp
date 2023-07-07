@@ -1,6 +1,63 @@
+import { useSelector, useDispatch } from "react-redux";
+import { getPostById, removePost } from "../../redux/postsRedux";
+import { useParams, Navigate, NavLink } from "react-router-dom";
+import { useState } from 'react';
+import { Row } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Modal from 'react-bootstrap/Modal';
+
 const SinglePost = () => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const { postId } = useParams();
+    const postData = useSelector(state => getPostById(state, postId));
+    const dispatch = useDispatch();
+    const handleRemove = () => {
+        dispatch(removePost(postId));
+        handleClose();
+    }
+    if (!postData) return <Navigate to="/" />
     return (
-        <h2> Single Post </h2>
+        <>
+            <Row className="justify-content-center">
+                <Col xs="12" md="10" lg="8">
+                    <header className="d-flex justify-content-between align-items-center">
+                        <h2>
+                            {postData.title}
+                        </h2>
+                        <div>
+                            <Button id="edit-button" variant="outline-info" as={NavLink} to={`/post/edit/${postData.id}`} style={{ marginRight: '5px' }}> Edit </Button>
+                            <Button id="delete-button" variant="outline-danger" onClick={handleShow} style={{ marginLeft: '5px' }}> Delete </Button>
+                        </div>
+                    </header>
+                    <div className="py-4">
+                        <div>
+                            <span className="fw-bold"> Author: </span>
+                            <span>{postData.author}</span>
+                        </div>
+                        <div>
+                            <span className="fw-bold"> Published: </span>
+                            <span>{postData.publishedDate}</span>
+                        </div>
+                    </div>
+                    <article>
+                        {postData.content}
+                    </article>
+                </Col>
+            </Row>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title> Are you sure you want to do that? </Modal.Title>
+                </Modal.Header>
+                <Modal.Body> Are you absolutely certain you want to proceed with this action? <br /> Once completed, this post will be permanently erased from the app! </Modal.Body>
+                <Modal.Footer>
+                    <Button id="cancel-button" variant="secondary" onClick={handleClose}> Cancel </Button>
+                    <Button id="remove-button" variant="danger" onClick={handleRemove}> Remove </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 };
 

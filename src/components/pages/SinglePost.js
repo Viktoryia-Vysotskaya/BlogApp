@@ -37,8 +37,51 @@ const SinglePost = () => {
                                     }
                                 `}
                             </style>
-                            <Button id="edit-button" variant="outline-info" as={NavLink} to={`/post/edit/${postData.id}`} style={{ marginRight: '20px', color: 'blue', borderColor: 'black', boxShadow: '0 0 5px blue, 0 0 10px gray, 0 0 15px blue' }}> Edit </Button>
-                            <Button id="delete-button" variant="outline-danger" onClick={handleShow} style={{ boxShadow: '0 0 5px red, 0 0 10px gray, 0 0 15px red' }}> Delete </Button>
+                            <Button
+                                id="edit-button"
+                                variant="outline-info"
+                                as={NavLink}
+                                to={`/post/edit/${postData.id}`}
+                                style={{
+                                    marginRight: '20px',
+                                    color: 'blue',
+                                    borderColor: 'black',
+                                    boxShadow: '0 0 5px blue, 0 0 10px gray, 0 0 15px blue',
+                                    backgroundColor: 'white',
+                                    transition: 'background-color 0.3s ease'
+                                }}
+                                onMouseEnter={e => {
+                                    e.target.style.backgroundColor = '#C0C0C0';
+                                    e.target.style.color = 'black';
+                                }}
+                                onMouseLeave={e => {
+                                    e.target.style.backgroundColor = 'white';
+                                    e.target.style.color = 'blue';
+                                }}
+                            >
+                                Edit
+                            </Button>
+                            <Button
+                                id="delete-button"
+                                variant="outline-danger"
+                                onClick={handleShow}
+                                style={{
+                                    color: 'red',
+                                    backgroundColor: 'white',
+                                    boxShadow: '0 0 5px red, 0 0 10px gray, 0 0 15px red',
+                                    transition: 'background-color 0.3s ease, color 0.3s ease'
+                                }}
+                                onMouseEnter={e => {
+                                    e.target.style.backgroundColor = '#C0C0C0';
+                                    e.target.style.color = 'black';
+                                }}
+                                onMouseLeave={e => {
+                                    e.target.style.backgroundColor = 'white';
+                                    e.target.style.color = 'red';
+                                }}
+                            >
+                                Delete
+                            </Button>
                         </div>
                     </header>
                     <div className="py-4">
@@ -51,9 +94,7 @@ const SinglePost = () => {
                             <span>{postData.publishedDate}</span>
                         </div>
                     </div>
-                    <article style={{ color: 'red', fontStyle: 'italic' }}>
-                        {postData.content}
-                    </article>
+                    <article style={{ color: 'red', fontStyle: 'italic' }} dangerouslySetInnerHTML={{ __html: postData.content }}></article>
                 </Col>
             </Row>
             <Modal show={show} onHide={handleClose} style={{ textAlign: 'center', marginTop: '250px' }}>

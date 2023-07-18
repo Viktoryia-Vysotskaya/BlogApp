@@ -16,11 +16,11 @@ createRoot(document.querySelector('#root')).render(
   </React.StrictMode>,
 );
 
-document.body.style.background = 'linear-gradient(to top, white, gray)';
+document.body.style.backgroundImage = 'linear-gradient(to right, white, gray)';
 document.body.style.margin = '0';
 document.body.style.padding = '0';
 document.body.style.height = '100%';
-document.documentElement.style.backgroundColor = 'linear-gradient(to top, white, gray)';
+document.documentElement.style.backgroundImage = 'linear-gradient(to right, white, gray)';
 document.documentElement.style.margin = '0';
 document.documentElement.style.padding = '0';
 document.documentElement.style.height = '100%';

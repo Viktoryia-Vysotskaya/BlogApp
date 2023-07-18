@@ -6,7 +6,7 @@ const EditPost = () => {
         <>
             <Row className="justify-content-center">
                 <Col xs="12" md="10" lg="8">
-                    <h1 className="mb-5" style={{ color: 'blue' }}><strong> Add Post </strong></h1>
+                    <h1 className="mb-5" style={{ color: 'blue' }}><strong> Edit Post </strong></h1>
                     <EditPostForm />
                 </Col>
             </Row>

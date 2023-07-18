@@ -1,0 +1,92 @@
+@import '../../../styles/settings.scss';
+
+.single-post {
+    padding-top: 80px;
+    padding-left: 200px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        color: $color-four;
+        font-size: 36px;
+        padding-bottom: 20px;
+    }
+}
+
+.single-post .post-header .edit-button {
+    margin-right: 20px;
+    color: $color-two;
+    border-color: $color-dark;
+    box-shadow: 0 0 5px $color-two, 0 0 10px $color-one, 0 0 15px $color-two;
+    background-color: $color-seven;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 1s ease;
+
+    &:hover {
+        background-color: $color-light;
+        color: $color-dark;
+        transform: scale(1.2);
+        box-shadow: 0 0 5px $color-one, 0 0 10px $color-two, 0 0 15px $color-one;
+        border-color: $color-two;
+    }
+}
+
+.single-post .post-header .delete-button {
+    color: $color-three;
+    border-color: $color-dark;
+    background-color: $color-seven;
+    box-shadow: 0 0 5px $color-three, 0 0 10px $color-one, 0 0 15px $color-three;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 1s ease;
+
+    &:hover {
+        background-color: $color-light;
+        color: $color-dark;
+        transform: scale(1.2);
+        box-shadow: 0 0 5px $color-one, 0 0 10px $color-three, 0 0 15px $color-one;
+        border-color: $color-three;
+    }
+}
+
+.py-4 {
+    font-size: 20px;
+
+    div {
+        .fw-bold {
+            color: $color-two;
+        }
+    }
+}
+
+article {
+    color: $color-three;
+    font-style: italic;
+    padding-top: 30px;
+}
+
+.modal-dialog {
+    text-align: center;
+    margin-top: 250px;
+}
+
+.modal-title {
+    color: $color-three;
+    padding-left: 40px;
+}
+
+.modal-body {
+    color: $color-two;
+    font-size: 14px;
+}
+
+.cancel-button {
+    color: $color-light;
+    background-color: $color-five;
+}
+
+.remove-button {
+    color: $color-light;
+    background-color: $color-six;
+}

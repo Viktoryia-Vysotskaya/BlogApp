@@ -1,0 +1,33 @@
+@import '../../../styles/settings.scss';
+
+.categories-container {
+    width: 50%;
+}
+
+.categories-title {
+    color: $color-two;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px $color-dark;
+}
+
+.category-item {
+    text-align: center;
+    background-Image: linear-gradient(to left, $color-seven, $color-light );
+    box-shadow: 0 0 3px $color-dark, 0 0 10px $color-one, 0 0 10px $color-dark;
+}
+
+.link-style {
+    color: $color-dark;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 10px;
+
+    &:hover {
+        color: $color-light;
+        text-shadow: 4px 4px 8px $color-dark;
+    }
+}

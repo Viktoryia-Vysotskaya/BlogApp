@@ -6,7 +6,8 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '2023-07-05',
-            author: 'Viktoryia Vysotskaya'
+            author: 'Viktoryia Vysotskaya',
+            category: 'Sport'
         },
         {
             id: '2',
@@ -14,7 +15,8 @@ const initialState = {
             shortDescription: 'A brief overview of the article...',
             content: 'The main subject matter of the article',
             publishedDate: '2023-07-06',
-            author: 'Viktoryia Vysotskaya'
+            author: 'Viktoryia Vysotskaya',
+            category: 'Movies'
         },
         {
             id: '3',
@@ -22,9 +24,15 @@ const initialState = {
             shortDescription: 'Summarizing the main points, the article explores...',
             content: 'The primary focus of the article',
             publishedDate: '2023-07-07',
-            author: 'Viktoryia Vysotskaya'
+            author: 'Viktoryia Vysotskaya',
+            category: 'News'
         },
     ],
+    categories: [
+        'Sport',
+        'Movies',
+        'News'
+    ]
 };
 
 export default initialState;

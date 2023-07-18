@@ -1,0 +1,28 @@
+@import '../../../styles/settings.scss';
+
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    color: $color-two;
+  }
+
+  .add-post-button {
+    color: $color-two;
+    border-color: $color-dark;
+    box-shadow: 0 0 5px $color-two, 0 0 10px $color-one, 0 0 15px $color-two;
+    background-color: $color-seven;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 1s ease;
+
+    &:hover {
+      color: $color-three;
+      border-color: $color-two;
+      background-color: $color-light;
+      transform: scale(1.2);
+      box-shadow: 0 0 5px $color-one, 0 0 10px $color-two, 0 0 15px $color-one;
+      border-color: $color-two;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import '../../../styles/settings.scss';
+
+.post-form {
+  padding-bottom: 30px;
+
+  .form-group {
+    padding-bottom: 18px;
+
+    label {
+      color: $color-dark;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 50%;
+      color: $color-two;
+      font-style: italic;
+      box-shadow: inset 0 0 10px $color-one, inset 0 0 10px $color-dark;
+    }
+
+    .error-icon {
+      margin-right: 5px;
+    }
+
+    .text-danger {
+      color: $color-three;
+    }
+
+    .mt-1 {
+      margin-top: 4px;
+    }
+
+    .d-block {
+      display: block;
+    }
+  }
+
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+
+  .main-content {
+    width: 50%;
+    color: $color-two;
+    font-style: italic;
+    box-shadow: inset 0 0 10px $color-one, inset 0 0 10px $color-dark;
+    background-color: $color-light;
+  }
+
+  .submit-button {
+    border-color: $color-dark;
+    box-shadow: 0 0 5px $color-dark, 0 0 10px $color-one, 0 0 15px $color-dark;
+    margin-top: 50px;
+    transition: transform 1s ease;
+
+    &:hover {
+      background-color: $color-seven;
+      border-color: $color-three;
+      color: $color-dark;
+      transform: scale(1.2);
+    }
+  }
+}

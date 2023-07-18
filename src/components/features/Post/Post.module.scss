@@ -1,0 +1,44 @@
+@import '../../../styles/settings.scss';
+
+.post-card {
+  box-shadow: 0 0 5px $color-dark, 0 0 10px $color-one, 0 0 15px $color-dark;
+  background-Image: linear-gradient(to left, $color-seven, $color-light );
+  margin-top: 30px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  padding-bottom: 30px;
+  color: $color-dark;
+}
+
+.author,
+.published,
+.category {
+  text-align: center;
+  font-weight: bold;
+  color: $color-three;
+}
+
+.card-text {
+  color: $color-dark;
+  font-style: italic;
+  padding-top: 30px;
+}
+
+.post-card .card-body .read-more-button {
+  margin-top: 30px;
+  border-color: $color-dark;
+  box-shadow: 0 0 5px $color-dark, 0 0 10px $color-one, 0 0 15px $color-dark;
+  transition: transform 1s ease;
+
+  &:hover {
+    background-color: $color-seven;
+    border-color: $color-three;
+    color: $color-dark;
+    transform: scale(1.2);
+  }
+}

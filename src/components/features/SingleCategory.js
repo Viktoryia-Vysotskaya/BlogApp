@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 import { getPostsByCategory } from '../../redux/categoriesRedux';
 import { Row } from 'react-bootstrap';
 import Post from './Post/Post';
-import { Navigate } from 'react-router-dom';
 
 const SingleCategory = () => {
   const { category } = useParams();
   const categoriesData = useSelector(state => getPostsByCategory(state, category));
-  if (!categoriesData) return <Navigate to="/categories/" />;
+  if (!categoriesData || categoriesData.length === 0) {
+    return <p style={{ color: 'blue', fontSize: '20px' }}><strong> No posts found! </strong></p>;
+  }
+
   return (
     <Row className="justify-content-between">
       <Post posts={categoriesData} />

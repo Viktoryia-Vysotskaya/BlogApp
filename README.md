@@ -32,6 +32,14 @@
 
 ![Alt Text](./src/images/screenshots/DeletePost.png)
 
+📸 ↴︎
+
+![Alt Text](./src/images/screenshots/Categories.png)
+
+📸 ↴︎
+
+![Alt Text](./src/images/screenshots/NotFound.png)
+
 ✉ Contact:
 
 Created by Viktoryia Vysotskaya

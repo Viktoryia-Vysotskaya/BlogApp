@@ -3,7 +3,7 @@
 ➱ CRUD-type Application
 
 
-💻 Live demo: https://blogapp--viktoryiavysots.repl.co
+💻 Live demo: https://1c33ccb0-26f8-48b8-b2be-74454a6232cc-00-3n4stqt45b8oh.worf.replit.dev
 
 (!) Free hosting so might take a while to load for first time.
 
